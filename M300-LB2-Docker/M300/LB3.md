@@ -1,4 +1,4 @@
-#  Dokumentation LB3 Lucas Gamper 
+#  Dokumentation LB3 Laurent Zürrer 
 
 # K1 / K2
 
@@ -24,7 +24,7 @@ $ git clone https://github.com/mc-b/M300      #Repository klonen
 
 1. GitHub Account erstellen
 2. Mit Git bash SSH Key erstellen
- $ ssh-keygen -t rsa 4096 -C "lucas.gamper@edu.tbz.ch"
+ $ ssh-keygen -t rsa 4096 -C "laurent.zuerrer@edu.tbz.ch"
 3. SSH Key dem Agent hinzufügen
 4. SSH Key dem GitHub Konto hinzufügen
 
@@ -55,7 +55,7 @@ $ git clone https://github.com/mc-b/M300      #Repository klonen
 
 ### Geplante Umgebung:
 
-Für die LB3 werde ich wie bei der LB2 einen Webserver aufsetzen welcher die Verwaltung der MySQL Datenbank ermöglicht. Diese beiden Container werden in einem einzigen Docker Image erstellt. Zusätzlich kommt noch phpmyadmin aus einem anderen Image um die Kombination von zwei verschiedenen Container zu ermöglichen. Ausserdem wird auf der Datenbank ein persistentes Volume erstellt und es werden Sicherheitsmassnahme und ein Monitoring umgesetzt.
+Für die LB2 werde ich wie bei der LB1 einen Webserver aufsetzen welcher die Verwaltung der MySQL Datenbank ermöglicht. Diese beiden Container werden in einem einzigen Docker Image erstellt. Zusätzlich kommt noch phpmyadmin aus einem anderen Image um die Kombination von zwei verschiedenen Container zu ermöglichen. Ausserdem wird auf der Datenbank ein persistentes Volume erstellt und es werden Sicherheitsmassnahme und ein Monitoring umgesetzt.
 
 # Docker Befehle
 
@@ -108,7 +108,6 @@ Die Testfälle sind hier übersichtlich dokumentiert:
 
 Die Sicherheit habe ich wie folgt gewährleistet:
 
-- CPU Leistung begränzen
 - Memory Leistung begränzen
 - Neustarts begränzen
 - Überwachung und Benachrichtigung (Monitoring)
@@ -118,14 +117,14 @@ Die Sicherheit habe ich wie folgt gewährleistet:
 
 ![GUI](Images/code.png)
 
-In den Zeilen 33-82 wird das Monitoring installiert. Hierfür sind 2 Container notwendig. Der CAdvisor Container welcher für das GUI zuständig ist, und der influxdb Container, welcher die Datenbank zur verfügung stellt. In den Zeilen 58,59 sowie 81, 82 wird dann jeweils die CPU sowie die Memory Auslastung beschränkt. Dies habe ich auch bei allen anderen Container so eingestellt.
+In den Zeilen 33-82 wird das Monitoring installiert. Hierfür sind 2 Container notwendig. Der Cadvisor Container welcher für das GUI zuständig ist, und der influxdb Container, welcher die Datenbank zur verfügung stellt. In den Zeilen 58,59 sowie 81, 82 wird dann jeweils die CPU sowie die Memory Auslastung beschränkt. Dies habe ich auch bei allen anderen Container so eingestellt.
 
 # K5
 
 ## Wissenszuwachs 
 
-Im Verlauf dieser Arbeit konnte ich viel neues dazu lernen, insbesondere Docker konnte ich gut kennenlernen. Ich finde mich nun damit ganz gut zurrecht und kann einfache "Container-Infrastrukturen" erstellen. Auch über Container konnte ich mein Wissen erweitern, da ich diese zuvor noch nie aufgesetzt habe. Das Setup der Infrastruktur über das docker-compose.yml ist recht ähnlich wie bei Vagrant und ich konnte mit den Grundlagen von der LB2 einen guten Grundstein schaffen, trotzdem konnte ich auch hier noch neues lernen. 
+Im Verlauf dieser Arbeit konnte ich viel neues dazu lernen, insbesondere Docker konnte ich gut kennenlernen. Ich finde mich nun damit ganz gut zurrecht und kann einfache "Container-Infrastrukturen" erstellen. Auch über Container konnte ich mein Wissen erweitern, da ich diese zuvor noch nie aufgesetzt habe. Das Setup der Infrastruktur über das docker-compose.yml ist recht ähnlich wie bei Vagrant und ich konnte mit den Grundlagen von der LB1 einen guten Grundstein schaffen, trotzdem konnte ich auch hier noch neues lernen. 
 
 ## Reflexion
 
-Im grossen und ganzen hatte ich bei dieser Arbeit deutlich mehr Spass als bei der LB2 mit Vagrant. Ich war anfangs nicht so motiviert im Unterricht, konnte mich dann aber wieder motivieren und nach den ersten Erfolgen hat mir das arbeiten mit Docker recht spass gemacht. Im Betrieb arbeiten wir kaum mit Container, weshalb ich es dort wahrscheinlich nicht gross einsetzen werden, was ich schade finde. Nur das dokumentieren mit Markdown finde ich immernoch sehr mühsam.
+Im grossen und ganzen hatte ich bei dieser Arbeit deutlich mehr Spass als bei der LB1 mit Vagrant. Ich war anfangs nicht so motiviert im Unterricht, konnte mich dann aber wieder motivieren und nach den ersten Erfolgen hat mir das arbeiten mit Docker recht spass gemacht. Wir arbeiten auch Im Betrieb mit Docker und Containern jedoch nicht in meiner Abteilung, weshalb ich es dort wahrscheinlich nicht gross einsetzen werden, jedoch konnte ich dort etwas Hilfe abholen. Nur das dokumentieren mit Markdown finde ich immernoch sehr mühsam.
